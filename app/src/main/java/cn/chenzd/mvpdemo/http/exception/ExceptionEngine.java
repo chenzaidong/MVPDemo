@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.exception;
+package cn.chenzd.mvpdemo.http.exception;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.stream.MalformedJsonException;

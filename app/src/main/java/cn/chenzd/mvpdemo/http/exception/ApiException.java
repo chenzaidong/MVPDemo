@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.exception;
+package cn.chenzd.mvpdemo.http.exception;
 
 /**
  * api接口错误/异常统一处理类

@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.listener;
+package cn.chenzd.mvpdemo.http.listener;
 
 /**
  * 请求监听接口

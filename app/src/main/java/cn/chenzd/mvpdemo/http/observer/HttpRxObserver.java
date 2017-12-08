@@ -1,12 +1,12 @@
-package cn.chenzd.mvpdemo.observer;
+package cn.chenzd.mvpdemo.http.observer;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import cn.chenzd.mvpdemo.exception.ApiException;
-import cn.chenzd.mvpdemo.exception.ExceptionEngine;
-import cn.chenzd.mvpdemo.listener.HttpRequestListener;
-import cn.chenzd.mvpdemo.retrofit.RxActionManagerImpl;
+import cn.chenzd.mvpdemo.http.exception.ApiException;
+import cn.chenzd.mvpdemo.http.exception.ExceptionEngine;
+import cn.chenzd.mvpdemo.http.listener.HttpRequestListener;
+import cn.chenzd.mvpdemo.http.retrofit.RxActionManagerImpl;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 

@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.listener;
+package cn.chenzd.mvpdemo.http.listener;
 
 import android.os.Bundle;
 

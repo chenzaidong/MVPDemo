@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.retrofit;
+package cn.chenzd.mvpdemo.http.retrofit;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
@@ -39,6 +39,7 @@ public class HttpResponse {
         return code == 200 ? true : false;
     }
 
+    @Override
     public String toString() {
         String response = "[http response]" + "{\"code\": " + code + ",\"msg\":" + msg + ",\"result\":" + new Gson().toJson(result) + "}";
         return response;

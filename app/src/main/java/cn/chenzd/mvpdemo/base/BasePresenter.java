@@ -5,7 +5,7 @@ import android.os.Bundle;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
-import cn.chenzd.mvpdemo.listener.LifeCycleListener;
+import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
 
 /**
  * 基类Presenter

@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.exception;
+package cn.chenzd.mvpdemo.http.exception;
 
 /**
  * 自定义服务器错误

@@ -1,10 +1,10 @@
-package cn.chenzd.mvpdemo.function;
+package cn.chenzd.mvpdemo.http.function;
 
 
 import com.google.gson.Gson;
 
-import cn.chenzd.mvpdemo.exception.ServerException;
-import cn.chenzd.mvpdemo.retrofit.HttpResponse;
+import cn.chenzd.mvpdemo.http.exception.ServerException;
+import cn.chenzd.mvpdemo.http.retrofit.HttpResponse;
 import io.reactivex.functions.Function;
 
 /**

@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.retrofit;
+package cn.chenzd.mvpdemo.http.retrofit;
 
 import java.util.Map;
 

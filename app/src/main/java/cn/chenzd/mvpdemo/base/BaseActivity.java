@@ -7,8 +7,8 @@ import com.trello.rxlifecycle2.components.RxActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import cn.chenzd.mvpdemo.listener.LifeCycleListener;
-import cn.chenzd.mvpdemo.manager.ActivityStackManager;
+import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
+import cn.chenzd.mvpdemo.http.manager.ActivityStackManager;
 
 
 /**

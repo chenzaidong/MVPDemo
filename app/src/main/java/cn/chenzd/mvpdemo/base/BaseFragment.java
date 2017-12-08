@@ -10,7 +10,7 @@ import com.trello.rxlifecycle2.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import cn.chenzd.mvpdemo.listener.LifeCycleListener;
+import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
 
 /**
  * 基类Fragment

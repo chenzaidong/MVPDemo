@@ -1,12 +1,12 @@
-package cn.chenzd.mvpdemo.observer;
+package cn.chenzd.mvpdemo.http.observer;
 
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
-import cn.chenzd.mvpdemo.function.HttpResultFunction;
-import cn.chenzd.mvpdemo.function.ServerResultFunction;
-import cn.chenzd.mvpdemo.retrofit.HttpResponse;
+import cn.chenzd.mvpdemo.http.function.HttpResultFunction;
+import cn.chenzd.mvpdemo.http.function.ServerResultFunction;
+import cn.chenzd.mvpdemo.http.retrofit.HttpResponse;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

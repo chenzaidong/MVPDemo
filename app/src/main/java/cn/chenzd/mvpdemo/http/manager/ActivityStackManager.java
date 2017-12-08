@@ -1,4 +1,4 @@
-package cn.chenzd.mvpdemo.manager;
+package cn.chenzd.mvpdemo.http.manager;
 
 import android.app.Activity;
 import android.app.ActivityManager;
