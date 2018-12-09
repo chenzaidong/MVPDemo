@@ -11,6 +11,8 @@ import com.trello.rxlifecycle2.components.support.RxFragment;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 
 /**
@@ -19,8 +21,9 @@ import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
  * @author czd
  */
 
-public abstract class BaseFragment extends RxFragment {
+public abstract class BaseFragment extends RxFragment implements IDisposable {
     protected Unbinder unBinder;
+    private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -95,5 +98,21 @@ public abstract class BaseFragment extends RxFragment {
     public void setOnLifeCycleListener(LifeCycleListener listener) {
         mListener = listener;
     }
+    @Override
+    public void addDisposable(Disposable disposable) {
+        mCompositeDisposable.add(disposable);
+    }
 
+    @Override
+    public void removeDisposable(Disposable disposable) {
+        if (disposable == null) {
+            return;
+        }
+        mCompositeDisposable.remove(disposable);
+    }
+
+    @Override
+    public void removeAllDisposable() {
+        mCompositeDisposable.clear();
+    }
 }

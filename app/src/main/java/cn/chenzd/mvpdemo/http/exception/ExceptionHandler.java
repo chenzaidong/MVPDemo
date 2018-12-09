@@ -34,10 +34,7 @@ public class ExceptionHandler {
 
     public static ApiException handlerException(Throwable t) {
         ApiException ex = new ApiException(t);
-        if (t instanceof HttpException) {
-            ex.setCode(((HttpException) t).code());
-            ex.setMsg(t.getMessage());
-        } else if (t instanceof ServerException) {
+        if (t instanceof ServerException) {
             ex.setCode(((ServerException) t).getCode());
             ex.setMsg(t.getMessage());
         }else if ((t instanceof JsonParseException)
@@ -52,7 +49,10 @@ public class ExceptionHandler {
         }else if (t instanceof SocketTimeoutException){
             ex.setCode(ERROR_TIME_OUT);
             ex.setMsg("网络超时");
-        }else {
+        }else if (t instanceof HttpException) {
+            ex.setCode(((HttpException) t).code());
+            ex.setMsg(t.getMessage());
+        } else {
             ex.setCode(ERROR_UN_KNOWN);
             ex.setMsg("未知异常");
         }

@@ -7,6 +7,8 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import butterknife.ButterKnife;
 import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
 import cn.chenzd.mvpdemo.http.manager.ActivityStackManager;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 /**
  * 基类Activity
@@ -14,9 +16,9 @@ import cn.chenzd.mvpdemo.http.manager.ActivityStackManager;
  *
  * @author czd
  */
-public abstract class BaseActivity extends RxAppCompatActivity {
+public abstract class BaseActivity extends RxAppCompatActivity implements IDisposable{
     public LifeCycleListener mListener;
-
+    private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +71,25 @@ public abstract class BaseActivity extends RxAppCompatActivity {
             mListener.onDestroy();
         }
         ActivityStackManager.getInstance().remove(this);
+        removeAllDisposable();
+    }
+
+    @Override
+    public void addDisposable(Disposable disposable) {
+        mCompositeDisposable.add(disposable);
+    }
+
+    @Override
+    public void removeDisposable(Disposable disposable) {
+        if (disposable == null) {
+            return;
+        }
+        mCompositeDisposable.remove(disposable);
+    }
+
+    @Override
+    public void removeAllDisposable() {
+        mCompositeDisposable.clear();
     }
 
     /**

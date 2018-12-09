@@ -9,7 +9,7 @@ import cn.chenzd.mvpdemo.http.listener.LifeCycleListener;
  * V表示View层接口实例，T 表示activity或者fragment,用于绑定生命周期
  * @author czd
  */
-public abstract class BasePresenter<V extends BaseView ,T> implements LifeCycleListener {
+public abstract class BasePresenter<V extends IView,T> implements LifeCycleListener {
     protected WeakReference<V> mViewRef;
     protected WeakReference<T> mActivityRef;
 
@@ -41,11 +41,11 @@ public abstract class BasePresenter<V extends BaseView ,T> implements LifeCycleL
      * @author ZhongDaFeng
      */
     private void setListener(T activity) {
-        if (getActivity() != null) {
+        if (getActivityOrFragment() != null) {
             if (activity instanceof BaseActivity) {
-                ((BaseActivity) getActivity()).setOnLifeCycleListener(this);
+                ((BaseActivity) getActivityOrFragment()).setOnLifeCycleListener(this);
             } else if (activity instanceof BaseFragment) {
-                ((BaseFragment) getActivity()).setOnLifeCycleListener(this);
+                ((BaseFragment) getActivityOrFragment()).setOnLifeCycleListener(this);
             }
         }
     }
@@ -63,7 +63,7 @@ public abstract class BasePresenter<V extends BaseView ,T> implements LifeCycleL
      * 获取activity
      *
      */
-    public T getActivity() {
+    public T getActivityOrFragment() {
         if (mActivityRef == null) {
             return null;
         }
